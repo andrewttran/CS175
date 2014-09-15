@@ -182,7 +182,7 @@ static void drawTriangle() {
 
   glBindBuffer(GL_ARRAY_BUFFER, g_triangle->colVbo);
   safe_glVertexAttribPointer(g_triangleShaderState->h_aColor,
-	                         2, GL_FLOAT, GL_FALSE, 0, 0);
+	                         3, GL_FLOAT, GL_FALSE, 0, 0);
 
   safe_glEnableVertexAttribArray(g_triangleShaderState->h_aPosition);
   safe_glEnableVertexAttribArray(g_triangleShaderState->h_aTexCoord);
@@ -458,19 +458,19 @@ static void loadSquareGeometry(const GeometryPX& g) {
 }
 
   static void loadTriangleGeometry(const GeometryPX& g) {
-  GLfloat pos[12] = {
+  GLfloat pos[6] = {
     -.5, .5,
-    .5, .5,
+	   .5, .5,
     0,  -.5
   };
 
-  GLfloat tex[12] = {
+  GLfloat tex[6] = {
     0, 1,
     1, 1,
     0.5, 0,
   };
 
-  GLfloat col[12] = {
+  GLfloat col[9] = {
 	1.0, 0.0, 0.0, //red
 	0.0, 1.0, 0.0, //green
 	0.0, 0.0, 1.0, //blue
@@ -479,7 +479,7 @@ static void loadSquareGeometry(const GeometryPX& g) {
   glBindBuffer(GL_ARRAY_BUFFER, g.posVbo);
   glBufferData(
     GL_ARRAY_BUFFER,
-    12*sizeof(GLfloat),
+    6*sizeof(GLfloat),
     pos,
     GL_STATIC_DRAW);
   checkGlErrors();
@@ -487,7 +487,7 @@ static void loadSquareGeometry(const GeometryPX& g) {
   glBindBuffer(GL_ARRAY_BUFFER, g.texVbo);
   glBufferData(
     GL_ARRAY_BUFFER,
-    12*sizeof(GLfloat),
+    6*sizeof(GLfloat),
     tex,
     GL_STATIC_DRAW);
   checkGlErrors();
@@ -495,7 +495,7 @@ static void loadSquareGeometry(const GeometryPX& g) {
   glBindBuffer(GL_ARRAY_BUFFER, g.colVbo);
   glBufferData(
 	GL_ARRAY_BUFFER,
-	12*sizeof(GLfloat),
+	9*sizeof(GLfloat),
 	col,
 	GL_STATIC_DRAW);
   checkGlErrors();
