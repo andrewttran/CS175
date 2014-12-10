@@ -1,0 +1,1 @@
+This repository contains assignments for CS175: Computer Graphics at Harvard for fall 2014. Each assignment is assigned weekly and completed jointly by Github users roseannefeng and belindazeng. Specs for each assignment are included as the pdf in each assignment subfolder.
